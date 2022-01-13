@@ -418,7 +418,8 @@ namespace Flow.Launcher.Plugin.SpotifyPremium
                 Action = (a) =>
                 {
                     _ = _client.SetDevice(x.Id);
-                    return true;
+                    _context.API.ChangeQuery(_context.CurrentPluginMetadata.ActionKeywords[0]);
+                    return false;
                 }
             }).ToList();
 
